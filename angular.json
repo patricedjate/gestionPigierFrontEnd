@@ -25,9 +25,23 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/datatables/media/css/jquery.dataTables.css",
+              "src/assets/plugins/daterangepicker/daterangepicker.css",
+              "src/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./src/assets/js/moment.min.js",
+              "src/assets/plugins/daterangepicker/daterangepicker.js",
+              "./src/assets/js/circle-progress.min.js",
+              "./src/assets/admin/plugins/slimscroll/jquery.slimscroll.min.js",
+              "./src/assets/js/script.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/datatables/media/js/jquery.dataTables.js",
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/jquery/dist/jquery.slim.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
