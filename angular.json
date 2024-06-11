@@ -25,22 +25,30 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "./src/assets/css/style.css",
+              "./src/assets/css/feather.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/datatables/media/css/jquery.dataTables.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/ngx-toastr/toastr-old.css",
+              "node_modules/jquery-ui-dist/jquery-ui.css",
               "src/assets/plugins/daterangepicker/daterangepicker.css",
               "src/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css"
             ],
             "scripts": [
               "./src/assets/js/moment.min.js",
-              "src/assets/plugins/daterangepicker/daterangepicker.js",
               "./src/assets/js/circle-progress.min.js",
-              "./src/assets/admin/plugins/slimscroll/jquery.slimscroll.min.js",
               "./src/assets/js/script.js",
+              "./src/assets/js/jquery-3.6.0.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/datatables/media/js/jquery.dataTables.js",
               "node_modules/jquery/dist/jquery.js",
-              "node_modules/jquery/dist/jquery.slim.js"
+              "node_modules/jquery/dist/jquery.slim.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui-dist/jquery-ui.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js",
+              "node_modules/aos/dist/aos.js"
             ]
           },
           "configurations": {
