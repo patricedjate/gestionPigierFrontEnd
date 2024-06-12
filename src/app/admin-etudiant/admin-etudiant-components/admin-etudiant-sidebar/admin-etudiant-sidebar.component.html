@@ -1,1 +1,54 @@
-<p>admin-etudiant-sidebar works!</p>
+ <div class="profile-sidebar">
+    <div class="widget-profile pro-widget-content">
+      <div class="profile-info-widget">
+        <a href="#" class="booking-doc-img">
+          <img src="assets/img/patients/patient.jpg" alt="User Image">
+        </a>
+        <div class="profile-det-info">
+          <h3>Richard Wilson</h3>
+          <div class="patient-details">
+            <h5><i class="fas fa-birthday-cake"></i> 24 Jul 1983, 38 years</h5>
+            <h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Newyork, USA</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-widget">
+      <nav class="dashboard-menu">
+        <ul>
+          <li [class.active]="page === 'dashboard'">
+            <a (click)="onChange('dashboard')" [routerLink]="'/etudiant/'">
+              <i class="fas fa-columns"></i>
+              <span>Tableau de bord</span>
+            </a>
+          </li>
+          <li [class.active]="page === 'RechercheStage'">
+            <a (click)="onChange('RechercheStage')" [routerLink]="'/etudiant/rechercheStage'">
+              <i class="fas fa-bookmark"></i>
+              <span>Rechercher un stage</span>
+            </a>
+          </li>
+
+          <li [class.active]="page === 'profil'">
+            <a (click)="onChange('profil')" [routerLink]="'/etudiant/profil'">
+              <i class="fas fa-file-invoice-dollar"></i>
+              <span>Paramètre du compte</span>
+            </a>
+          </li>
+
+          <li [class.active]="page === 'mdpreset'">
+            <a (click)="onChange('mdpreset')" [routerLink]="'/etudiant/mdpReset'">
+              <i class="fas fa-lock"></i>
+              <span>Changer mon mot de passe</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Se deconnecter</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>

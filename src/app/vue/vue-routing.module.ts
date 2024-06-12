@@ -25,13 +25,7 @@ const routes: Routes = [
         (m) => m.VueRegisterModule
       ),
   },
-  {
-    path: 'login',
-    loadChildren: () =>
-      import('./vue-login/vue-login.module').then(
-        (m) => m.VueLoginModule
-      ),
-  },
+
   {
     path: 'mdp-forget',
     loadChildren: () =>

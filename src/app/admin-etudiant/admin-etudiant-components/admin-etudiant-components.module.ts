@@ -8,14 +8,18 @@ import { AdminEtudiantSidebarComponent } from './admin-etudiant-sidebar/admin-et
 
 
 @NgModule({
-  declarations: [
-    AdminEtudiantFooterComponent,
-    AdminEtudiantHeaderComponent,
-    AdminEtudiantSidebarComponent
+    declarations: [
+        AdminEtudiantFooterComponent,
+        AdminEtudiantHeaderComponent,
+        AdminEtudiantSidebarComponent
+    ],
+  exports: [
+    AdminEtudiantSidebarComponent,
+    AdminEtudiantHeaderComponent
   ],
-  imports: [
-    CommonModule,
-    AdminEtudiantComponentsRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        AdminEtudiantComponentsRoutingModule
+    ]
 })
 export class AdminEtudiantComponentsModule { }

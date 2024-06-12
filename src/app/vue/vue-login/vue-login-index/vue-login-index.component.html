@@ -24,46 +24,30 @@
       <div class="login-wrapper">
         <div class="loginbox">
           <div class="img-logo">
-            <img src="assets/img/logo.png" class="img-fluid" alt="Logo">
+           <!-- <img src="assets/img/logo.png" class="img-fluid" alt="Logo"> -->
           </div>
-          <h3>Login</h3>
-          <p class="account-subtitle">login to your account to continue</p>
-          <form action="https://doccure-html.dreamguystech.com/template/admin/index.html">
+          <h3>Connexion</h3>
+          <p class="account-subtitle">veuillez vous connecter à votre compte pour continuer</p>
+          <form [formGroup]="form">
             <div class="form-group form-focus">
-              <input type="text" class="form-control floating">
-              <label class="focus-label">Enter Email</label>
+              <input type="text" class="form-control floating" formControlName="email" placeholder="Email">
             </div>
+            <br>
             <div class="form-group form-focus">
-              <input type="password" class="form-control floating">
-              <label class="focus-label">Enter Password</label>
+              <input type="password" class="form-control floating" formControlName="password" placeholder="Mot de passe">
             </div>
             <div class="form-group">
               <div class="row">
-                <div class="col-6">
-                  <label class="custom_check mr-2 mb-0 d-inline-flex"> Remember me
-                    <input type="checkbox" name="radio">
-                    <span class="checkmark"></span>
-                  </label>
-                </div>
-                <div class="col-6 text-end">
-                  <a class="forgot-link" href="forgot-password.html">Forgot Password ?</a>
+
+                <div class="col-12 text-end">
+                  <a class="forgot-link" href="forgot-password.html">Mot de passe oublié ?</a>
                 </div>
               </div>
-            </div>
+            </div><br>
             <div class="d-grid">
-              <button class="btn btn-primary" type="submit">Login</button>
+              <button class="btn btn-primary" type="submit" (click)="seConnecter()">Se connecter</button>
             </div>
-            <div class="dont-have">Don't have an account? <a href="register.html">Sign up</a></div>
-            <div class="login-or">
-              <span class="or-line"></span>
-              <p class="span-or">or login with </p>
-            </div>
-
-            <div class="social-login">
-              <a href="#"><img src="assets/img/icon/google.png" class="img-fluid" alt="Logo"></a>
-              <a href="#"><img src="assets/img/icon/facebook.png" class="img-fluid" alt="Logo"></a>
-              <a href="#"><img src="assets/img/icon/twitter.png" class="img-fluid" alt="Logo"></a>
-            </div>
+            <div class="dont-have">Vous n'avez pas de compte? <a class="btn btn-primary" (click) = "enregistrer">S'enregistrer</a></div>
 
           </form>
         </div>

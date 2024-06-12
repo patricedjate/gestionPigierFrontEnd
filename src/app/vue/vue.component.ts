@@ -6,13 +6,6 @@ import { User } from 'src/app/core/model/user';
   templateUrl: './vue.component.html',
   styleUrls: ['./vue.component.css']
 })
-export class VueComponent implements OnInit{
-  form!: FormGroup;
-  user!: User;
-  ngOnInit():void {
-    this.form = new FormGroup({
-      username: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
-    });
-  }
+export class VueComponent {
+
 }
