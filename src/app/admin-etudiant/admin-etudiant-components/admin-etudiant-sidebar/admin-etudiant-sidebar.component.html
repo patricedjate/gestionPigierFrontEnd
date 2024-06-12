@@ -16,72 +16,36 @@
     <div class="dashboard-widget">
       <nav class="dashboard-menu">
         <ul>
-          <li class="active">
-            <a href="patient-dashboard.html">
+          <li [class.active]="page === 'dashboard'">
+            <a (click)="onChange('dashboard')" [routerLink]="'/etudiant/'">
               <i class="fas fa-columns"></i>
-              <span>Dashboard</span>
+              <span>Tableau de bord</span>
             </a>
           </li>
-          <li>
-            <a href="favourites.html">
+          <li [class.active]="page === 'RechercheStage'">
+            <a (click)="onChange('RechercheStage')" [routerLink]="'/etudiant/rechercheStage'">
               <i class="fas fa-bookmark"></i>
-              <span>Favourites</span>
+              <span>Rechercher un stage</span>
             </a>
           </li>
-          <li>
-            <a href="dependent.html">
-              <i class="fas fa-users"></i>
-              <span>Dependent</span>
-            </a>
-          </li>
-          <li>
-            <a href="chat.html">
-              <i class="fas fa-comments"></i>
-              <span>Message</span>
-              <small class="unread-msg">23</small>
-            </a>
-          </li>
-          <li>
-            <a href="patient-accounts.html">
+
+          <li [class.active]="page === 'profil'">
+            <a (click)="onChange('profil')" [routerLink]="'/etudiant/profil'">
               <i class="fas fa-file-invoice-dollar"></i>
-              <span>Accounts</span>
+              <span>Paramètre du compte</span>
             </a>
           </li>
-          <li>
-            <a href="orders-list.html">
-              <i class="fas fa-list-alt"></i>
-              <span>Orders</span>
-              <small class="unread-msg">7</small>
-            </a>
-          </li>
-          <li>
-            <a href="medical-records.html">
-              <i class="fas fa-clipboard"></i>
-              <span>Add Medical Records</span>
-            </a>
-          </li>
-          <li>
-            <a href="medical-details.html">
-              <i class="fas fa-file-medical-alt"></i>
-              <span>Medical Details</span>
-            </a>
-          </li>
-          <li>
-            <a href="profile-settings.html">
-              <i class="fas fa-user-cog"></i>
-              <span>Profile Settings</span>
-            </a>
-          </li>
-          <li>
-            <a href="change-password.html">
+
+          <li [class.active]="page === 'mdpreset'">
+            <a (click)="onChange('mdpreset')" [routerLink]="'/etudiant/mdpReset'">
               <i class="fas fa-lock"></i>
-              <span>Change Password</span>
+              <span>Changer mon mot de passe</span>
             </a>
           </li>
           <li>
             <a href="index.html">
               <i class="fas fa-sign-out-alt"></i>
-              <span>Logout</span>
+              <span>Se deconnecter</span>
             </a>
           </li>
         </ul>

@@ -12,7 +12,7 @@ const routes: Routes = [
        ),
    },
   {
-    path: 'stage',
+    path: 'rechercheStage',
     component: AdminEtudiantComponent,
     loadChildren: () =>
       import('./admin-etudiant-stage/admin-etudiant-stage.module').then(

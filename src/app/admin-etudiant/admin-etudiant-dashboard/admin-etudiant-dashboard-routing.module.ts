@@ -5,7 +5,7 @@ import {AdminEtudiantDashboardComponent} from "./admin-etudiant-dashboard.compon
 
 const routes: Routes = [
   {
-    path: 'profil',
+    path: '',
     component: AdminEtudiantDashboardComponent,
   }
 ];

@@ -4,7 +4,7 @@ import {AdminEtudiantProfilComponent} from "./admin-etudiant-profil.component";
 
 const routes: Routes = [
   {
-    path: 'profil',
+    path: '',
     component: AdminEtudiantProfilComponent,
   }
 ];

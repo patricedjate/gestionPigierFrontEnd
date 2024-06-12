@@ -5,7 +5,7 @@ import {AdminEtudiantMdpResetComponent} from "./admin-etudiant-mdp-reset.compone
 
 const routes: Routes = [
   {
-    path: 'mdpReset',
+    path: '',
     component: AdminEtudiantMdpResetComponent,
   }
 ];
