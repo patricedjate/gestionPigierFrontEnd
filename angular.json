@@ -33,7 +33,8 @@
               "node_modules/ngx-toastr/toastr-old.css",
               "node_modules/jquery-ui-dist/jquery-ui.css",
               "src/assets/plugins/daterangepicker/daterangepicker.css",
-              "src/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css"
+              "src/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css"
             ],
             "scripts": [
               "./src/assets/js/moment.min.js",
@@ -48,7 +49,8 @@
               "node_modules/jquery-ui-dist/jquery-ui.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "src/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js",
-              "node_modules/aos/dist/aos.js"
+              "node_modules/aos/dist/aos.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js"
             ]
           },
           "configurations": {
