@@ -17,6 +17,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'vue',
+    loadChildren: () =>
+      import('./vue/vue.module').then(
+        (m) => m.VueModule
+      ),
+  },
+  {
     path: 'entreprise',
     loadChildren: () =>
       import('./admin-entreprise/admin-entreprise.module').then(
@@ -28,6 +35,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./admin-etudiant/admin-etudiant.module').then(
         (m) => m.AdminEtudiantModule
+      ),
+  },
+  {
+    path: 'construction',
+    loadChildren: () =>
+      import('./vue/vue-not-found/vue-not-found.module').then(
+        (m) => m.VueNotFoundModule
       ),
   },
 ]

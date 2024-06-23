@@ -15,7 +15,7 @@ import {jwtDecode} from "jwt-decode";
 export class VueLoginIndexComponent implements OnInit {
   form!: FormGroup;
   user!: any;
-  isConnecting! : false;
+  isConnecting! : boolean;
   constructor(
     public router: Router,
     public authService : AccountService,
@@ -34,6 +34,7 @@ export class VueLoginIndexComponent implements OnInit {
       this.authService.login( this.form.get('email')?.value,this.form.get('password')?.value).subscribe({
         next : data =>{
           this.authService.loadProfile(data);
+          this.isConnecting = true;
           alert(JSON.stringify(data));
           this.user = data;
           let decodedJwt:any =jwtDecode(this.user["access_token"]);

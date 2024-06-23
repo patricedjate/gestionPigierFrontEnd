@@ -49,6 +49,7 @@
               "node_modules/jquery-ui-dist/jquery-ui.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "src/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js",
+              "./src/assets/admin/plugins/slimscroll/jquery.slimscroll.min.js",
               "node_modules/aos/dist/aos.js",
               "node_modules/datatables.net/js/jquery.dataTables.min.js"
             ]

@@ -16,5 +16,8 @@ export class AdminEtudiantSidebarComponent implements OnInit {
   onChange(name:any){
     this.page = name;
   }
-
+  logout(event:any){
+    event.preventDefault();
+    localStorage.clear();
+  }
 }

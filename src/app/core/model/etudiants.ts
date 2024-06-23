@@ -1,4 +1,5 @@
 import { Stages } from "./stages";
+import {User} from "./user";
 
 
 export interface Etudiants{
@@ -11,5 +12,6 @@ export interface Etudiants{
   niveau_etude?: string;
   date_naissance?: string
   stage? : Stages[];
+  user? : User;
 
 }

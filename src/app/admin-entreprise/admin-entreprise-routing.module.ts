@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AdminEtudiantComponent} from "../admin-etudiant/admin-etudiant.component";
 import {AdminEntrepriseComponent} from "./admin-entreprise.component";
 
 const routes: Routes = [
+  {
+    path: '',
+    component: AdminEntrepriseComponent,
+    loadChildren: () =>
+      import('./admin-entreprise-dashboard/admin-entreprise-dashboard.module').then(
+        (m) => m.AdminEntrepriseDashboardModule
+      ),
+  },
   {
     path: 'stage',
     component: AdminEntrepriseComponent,
