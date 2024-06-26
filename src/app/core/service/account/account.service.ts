@@ -30,8 +30,14 @@ export class AccountService {
     this.email = decodedJwt.sub;
     this.roles = decodedJwt.scope;
   }
+  /*
   public register(data : User){
     return this.http.post(`${this.apiUrl}/addUser`,data)
+  }
+
+   */
+  public addRole(userId: number, roleId: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/addRoleToUser/${userId}/${roleId}`,{userId:userId,roleId:roleId},)
   }
 }
 

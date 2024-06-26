@@ -26,25 +26,78 @@
           <h3>Getting Started</h3>
           <p class="account-subtitle">S'inscrire</p>
           <form [formGroup]="form">
-            <div class="form-group form-focus">
-              <input type="text" class="form-control floating" formControlName="email">
-              <label class="focus-label"> Email</label>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group form-focus">
+                  <input type="text" class="form-control floating" formControlName="nom">
+                  <label class="focus-label"> Nom</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-focus">
+                  <input type="text" class="form-control floating" formControlName="prenoms">
+                  <label class="focus-label"> Prenoms</label>
+                </div>
+              </div>
             </div>
-            <div class="form-group form-focus">
-              <input type="text" class="form-control floating" formControlName="username">
-              <label class="focus-label">Username</label>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group form-focus">
+                  <input type="text" class="form-control floating" formControlName="universite">
+                  <label class="focus-label"> Université</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-focus">
+                  <input type="text" class="form-control floating" formControlName="niveau">
+                  <label class="focus-label"> Niveau Etude</label>
+                </div>
+              </div>
             </div>
-            <div class="form-group form-focus">
-              <input type="password" class="form-control floating" formControlName="mdp">
-              <label class="focus-label">Enter Password</label>
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group form-focus">
+                  <input type="text" class="form-control floating" formControlName="telephone">
+                  <label class="focus-label">Telephone</label>
+                </div>
+              </div>
             </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group form-focus">
+                  <input type="date" class="form-control floating" formControlName="date">
+                  <label class="focus-label"> Date naissance</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-focus">
+                  <input type="text" class="form-control floating" formControlName="username">
+                  <label class="focus-label"> Username</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group form-focus">
+                  <input type="email" class="form-control floating" formControlName="email">
+                  <label class="focus-label"> Email</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group form-focus">
+                  <input type="password" class="form-control floating" formControlName="mdp">
+                  <label class="focus-label"> Mot de Passe</label>
+                </div>
+              </div>
+            </div>
+
             <div class="form-group">
               <div class="row">
 
               </div>
             </div>
             <div class="d-grid">
-              <button class="btn btn-primary" type="submit" (click)="register()">Enregister</button>
+              <button class="btn btn-primary" type="submit" (click)="inscription()">Enregister</button>
             </div>
             <div class="dont-have">Vous avez un compte? <a [routerLink]="'/'">Se connecter</a></div>
 

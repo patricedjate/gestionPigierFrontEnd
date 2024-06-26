@@ -47,10 +47,10 @@ export class VueLoginIndexComponent implements OnInit {
           if(localStorage.getItem("role") == "ADMIN"){
             this.router.navigate(['']);
           }else if(localStorage.getItem("role") == "ENTREPRISE"){
-            this.router.navigate(['etudiant']);
+
           }
           else if(localStorage.getItem("role") == "ETUDIANT"){
-            this.router.navigate(["etudiant']"])
+            this.router.navigate(['etudiant']);
           }else if(localStorage.getItem("role") == "SUPERVISEUR"){
             this.router.navigate([''])
           }

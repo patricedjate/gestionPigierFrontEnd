@@ -8,9 +8,15 @@ import {Etudiants} from "../../model/etudiants"
 export class EtudiantService {
   private apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
+
   public addData(data:Etudiants){
     return this.http.post(`${this.apiUrl}/etudiant/add`, data);
 }
+
+
+  getById(id:number){
+    return this.http.get(`${this.apiUrl}/etudiant/${id}`);
+  }
 
 
 }
