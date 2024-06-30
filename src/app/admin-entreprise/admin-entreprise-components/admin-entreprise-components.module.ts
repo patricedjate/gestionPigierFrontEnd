@@ -13,6 +13,10 @@ import { AdminEntrepriseSidebarComponent } from './admin-entreprise-sidebar/admi
     AdminEntrepriseHeaderComponent,
     AdminEntrepriseSidebarComponent
   ],
+  exports: [
+    AdminEntrepriseSidebarComponent,
+    AdminEntrepriseHeaderComponent
+  ],
   imports: [
     CommonModule,
     AdminEntrepriseComponentsRoutingModule

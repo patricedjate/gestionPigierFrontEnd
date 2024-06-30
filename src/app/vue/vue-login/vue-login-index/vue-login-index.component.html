@@ -1,5 +1,5 @@
 
-<div class="main-wrapper">
+<div class="main-wrapper ">
   <div class="header d-none">
 
     <ul class="nav nav-tabs user-menu">
@@ -16,11 +16,10 @@
   <div class="row">
 
     <div class="col-md-6 login-bg">
-      <div class="login-banner"></div>
+      <div class="login-banner"><img src="./assets/img/connexion.jpg" width="100%" height="740"></div>
     </div>
 
-    <div class="col-md-6 login-wrap-bg">
-
+    <div class="col-md-6 login-wrap-bg text-center mt-5">
       <div class="login-wrapper">
         <div class="loginbox">
           <div class="img-logo">
@@ -30,7 +29,7 @@
           <p class="account-subtitle">veuillez vous connecter à votre compte pour continuer</p>
           <form [formGroup]="form">
             <div class="form-group form-focus">
-              <input type="text" class="form-control floating" formControlName="email" placeholder="Email">
+              <input type="email" class="form-control floating" formControlName="email" placeholder="Email">
             </div>
             <br>
             <div class="form-group form-focus">
@@ -47,7 +46,7 @@
             <div class="d-grid">
               <button class="btn btn-primary" type="submit" (click)="seConnecter()">Se connecter</button>
             </div>
-            <div class="dont-have">Vous n'avez pas de compte? <a class="btn btn-primary" (click) = "enregistrer">S'enregistrer</a></div>
+            <div class="dont-have">Vous n'avez pas de compte? <a class="btn" [routerLink]="'/vue/register'">S'enregistrer</a></div>
 
           </form>
         </div>

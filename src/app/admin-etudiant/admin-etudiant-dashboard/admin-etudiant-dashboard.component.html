@@ -6,8 +6,8 @@
           <div class="mb-3">
             <img src="" alt="" width="55">
           </div>
-          <h5>Candidature en cours</h5>
-          <h6>12 <sub></sub></h6>
+          <h5>Candidature</h5>
+          <h6><sub></sub></h6>
         </div>
       </div>
     </div>
@@ -54,27 +54,19 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
+                  <tr *ngFor="let item of items.stage ">
                     <td>
                       <h2 class="table-avatar">
-                        <a href="doctor-profile.html" class="avatar avatar-sm me-2">
-                          <img class="avatar-img rounded-circle" src="assets/img/doctors/doctor-thumb-09.jpg" alt="User Image">
-                        </a>
-                        <a href="doctor-profile.html">Dr. John Gibbs <span>Dental</span></a>
+                       {{item.titre}}
                       </h2>
                     </td>
-                    <td>6 Nov 2019 <span class="d-block text-info">8.00 PM</span></td>
-                    <td>4 Nov 2019</td>
-                    <td>$600</td>
-                    <td><span class="badge rounded-pill bg-success-light">Confirm</span></td>
+                    <td>{{ item.description }}</td>
+                    <td>{{item.date_debut}}</td>
+                    <td>{{ item.date_fin }}</td>
+                    <td><span class="badge rounded-pill bg-success-light"></span></td>
                     <td class="text-end">
                       <div class="table-action">
-                        <a href="javascript:void(0);" class="btn btn-sm bg-primary-light">
-                          <i class="fas fa-print"></i> Print
-                        </a>
-                        <a href="javascript:void(0);" class="btn btn-sm bg-info-light">
-                          <i class="far fa-eye"></i> View
-                        </a>
+
                       </div>
                     </td>
                   </tr>

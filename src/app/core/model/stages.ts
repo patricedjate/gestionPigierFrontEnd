@@ -4,4 +4,5 @@ export interface Stages {
       description?: string;
       date_debut?: string;
       date_fin?: string;
+      domaine?: string;
 }

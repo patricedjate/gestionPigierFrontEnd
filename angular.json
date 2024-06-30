@@ -32,8 +32,13 @@
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/ngx-toastr/toastr-old.css",
               "node_modules/jquery-ui-dist/jquery-ui.css",
+              "src/assets/admin/css/style.css",
+              "src/assets/admin/css/feathericon.min.css",
+              "src/assets/admin/css/bootstrap-datetimepicker.min.css",
+              "src/assets/admin/css/select2.min.css",
               "src/assets/plugins/daterangepicker/daterangepicker.css",
-              "src/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css"
+              "src/assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css"
             ],
             "scripts": [
               "./src/assets/js/moment.min.js",
@@ -48,7 +53,18 @@
               "node_modules/jquery-ui-dist/jquery-ui.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "src/assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js",
-              "node_modules/aos/dist/aos.js"
+              "./src/assets/admin/plugins/slimscroll/jquery.slimscroll.min.js",
+              "node_modules/aos/dist/aos.js",
+              "src/assets/admin/js/script.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js",
+              "src/assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js",
+              "src/assets/plugins/theia-sticky-sidebar/ResizeSensor.js",
+              "src/assets/js/profile-settings.js",
+              "src/assets/js/slick.js",
+              "src/assets/admin/plugins/slimscroll/jquery.slimscroll.js",
+              "src/assets/admin/plugins/datatables/datatables.js",
+              "src/assets/admin/plugins/datatables/jquery.dataTables.min.js",
+              "src/assets/admin/plugins/raphael/raphael.min.js"
             ]
           },
           "configurations": {

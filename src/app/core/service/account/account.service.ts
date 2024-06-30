@@ -3,6 +3,7 @@ import {environment} from "../../../../environments/environments";
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {jwtDecode} from "jwt-decode";
+import {User} from "../../model/user";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,18 @@ export class AccountService {
     let decodedJwt:any =jwtDecode(this.accessToken);
     this.email = decodedJwt.sub;
     this.roles = decodedJwt.scope;
+  }
+  /*
+  public register(data : User){
+    return this.http.post(`${this.apiUrl}/addUser`,data)
+  }
+
+   */
+  public addRole(userId: number, roleId: number): Observable<any> {
+    return this.http.post(`${this.apiUrl}/addRoleToUser/${userId}/${roleId}`,{userId:userId,roleId:roleId},)
+  }
+  public getUserByEmail(email: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/getuserbyemail/${email}`)
   }
 }
 
