@@ -5,6 +5,8 @@ import {Router} from "@angular/router";
 import {AccountService} from "../../../core/service/account/account.service";
 import {ToastrService} from "ngx-toastr";
 import {jwtDecode} from "jwt-decode";
+import {Etudiants} from "../../../core/model/etudiants";
+import {EtudiantService} from "../../../core/service/etudiant/etudiant.service";
 
 
 @Component({
@@ -16,10 +18,15 @@ export class VueLoginIndexComponent implements OnInit {
   form!: FormGroup;
   user!: any;
   isConnecting! : boolean;
+  email!: any;
+  userId!: any;
+  etudId!: any;
+ errorMessage: any;
   constructor(
-    public router: Router,
-    public authService : AccountService,
-    public  toastr : ToastrService,
+    private router: Router,
+    private authService : AccountService,
+    private  toastr : ToastrService,
+    private service : EtudiantService,
 
   ) {}
   ngOnInit():void {
@@ -30,7 +37,6 @@ export class VueLoginIndexComponent implements OnInit {
   }
   seConnecter(){
     if(this.form.valid && !this.isConnecting ){
-      console.log(this.form.value);
       this.authService.login( this.form.get('email')?.value,this.form.get('password')?.value).subscribe({
         next : data =>{
           this.authService.loadProfile(data);
@@ -44,6 +50,8 @@ export class VueLoginIndexComponent implements OnInit {
           localStorage.setItem("accessToken",this.user["access_token"]);
           localStorage.setItem("email",decodedJwt.sub);
           localStorage.setItem("role",decodedJwt.roles);
+          console.log(data)
+console.log(decodedJwt.token);
           if(localStorage.getItem("role") == "ADMIN"){
             this.router.navigate(['']);
           }else if(localStorage.getItem("role") == "ENTREPRISE"){
@@ -51,6 +59,22 @@ export class VueLoginIndexComponent implements OnInit {
           }
           else if(localStorage.getItem("role") == "ETUDIANT"){
             this.router.navigate(['etudiant']);
+            this.email = localStorage.getItem("email");
+            this.authService.getUserByEmail(this.email).subscribe({
+              next : data =>{
+                this.userId = data.id;
+                localStorage.setItem("userId",this.userId);
+                this.service.getByUserId(this.userId).subscribe({
+                    next: (data:Etudiants) => {
+                      this.etudId = data.id;
+                    localStorage.setItem("etudId",this.etudId);
+                    }
+                    , error: (error: any) => {
+                      this.errorMessage = error}
+                  }
+                )
+              }
+            })
           }else if(localStorage.getItem("role") == "SUPERVISEUR"){
             this.router.navigate([''])
           }

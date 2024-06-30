@@ -1,1 +1,49 @@
-<p>admin-entreprise-stage-add works!</p>
+<div class="row">
+  <div class="col-md-8">
+    <h5 class="mb-3">Ajouter une offre de stage</h5>
+    <form  class="supplier-form" [formGroup]="form">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group form-focus">
+            <input type="text" class="form-control floating" formControlName="titre">
+            <label class="focus-label">Titre <span class="text-danger">*</span></label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-focus form-group">
+            <select class="form-control select"  formControlName="domaine">
+              <option>Informatique</option>
+              <option>Comptabilité</option>
+              <option>tourisme et hotelerie</option>
+              <option>Marketing</option>
+              <option>Communication</option>
+              <option>Ressources Humaines</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group form-focus">
+            <input type="date" class="form-control floating" formControlName="dateDebut">
+            <label class="focus-label">Date Debut <span class="text-danger">*</span></label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group form-focus">
+            <input type="date" class="form-control floating" formControlName="dateFin">
+            <label class="focus-label">Date fin <span class="text-danger">*</span></label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="form-group form-focus">
+            <textarea class="form-control bg-grey floating" formControlName="description"></textarea>
+            <label class="focus-label">Descriptions <span class="text-danger">*</span></label>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary save-btn" (click)="addStage()">Ajouter</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

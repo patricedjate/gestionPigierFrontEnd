@@ -1,4 +1,4 @@
-<div class="card" *ngFor="let item of items">
+<div class="card" *ngFor="let item of items" ng>
   <div class="card-body">
     <div class="doctor-widget">
       <div class="doc-info-left">
@@ -8,7 +8,7 @@
           </a>
         </div>
         <div class="doc-info-cont">
-          <h4 class="doc-name"><a href="doctor-profile.html">{{item.titre}}</a></h4>
+          <h4 class="doc-name"><a href="doctor-profile.html" >{{item.titre}}</a></h4>
           <p class="doc-speciality">{{ item.description }}</p>
 
           <div class="clinic-details">
@@ -19,10 +19,17 @@
           </div>
         </div>
       </div>
+
       <div class="doc-info-right">
 
         <div class="clinic-booking">
-          <a class="view-pro-btn" [routerLink]="'/construction'">Voir Plus</a>
+          <a class="view-pro-btn" width="30px" [routerLink]="'/construction'">Voir Plus</a>
+        </div>
+      </div>
+      <div class="doc-info-right">
+
+        <div class="clinic-booking">
+          <a class="btn btn-success" (click)="(postuler(item.id))">Postuler</a>
         </div>
       </div>
     </div>

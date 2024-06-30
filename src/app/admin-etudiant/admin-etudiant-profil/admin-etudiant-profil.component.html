@@ -2,54 +2,55 @@
   <div class="card-body">
     <h4 class="card-title">Mes Informations</h4>
     <hr>
+    <form [formGroup]="form">
     <div class="row form-row">
 
       <div class="col-md-6">
         <div class="form-group">
-          <label>Username <span class="text-danger">*</span></label>
-          <input type="text" class="form-control" readonly>
+          <label>Nom <span class="text-danger">*</span></label>
+          <input type="text" class="form-control"  formControlName="nom">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>Email <span class="text-danger">*</span></label>
-          <input type="email" class="form-control" readonly>
+          <label>Prenoms <span class="text-danger">*</span></label>
+          <input type="text" class="form-control"  formControlName="prenom">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>First Name <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <label>Telephone <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" formControlName="tel">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>Last Name <span class="text-danger">*</span></label>
-          <input type="text" class="form-control">
+          <label>Université<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" formControlName="universite">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>Phone Number</label>
-          <input type="text" class="form-control">
+          <label>Date naissance</label>
+          <input type="text" class="form-control" formControlName="date">
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>Gender</label>
-          <select class="select form-control">
+          <label>Niveau d'etude</label>
+          <select class="select form-control" formControlName="niveau">
             <option>Select</option>
-            <option>Male</option>
-            <option>Female</option>
+            <option>BTS</option>
+            <option>LICENCE</option>
+            <option>MASTER</option>
           </select>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="form-group mb-0">
-          <label>Date of Birth</label>
-          <input type="text" class="form-control">
-        </div>
+      <div class="d-grid mt-5">
+        <button class="btn btn-primary" type="submit" (click)="valider()">Enregister</button>
       </div>
     </div>
+      </form>
   </div>
+
 </div>

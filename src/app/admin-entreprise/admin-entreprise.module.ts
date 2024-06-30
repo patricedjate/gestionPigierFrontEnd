@@ -13,10 +13,11 @@ import {AdminEntrepriseComponentsModule} from "./admin-entreprise-components/adm
   declarations: [
     AdminEntrepriseComponent
   ],
-  imports: [
-    CommonModule,
-    AdminEntrepriseRoutingModule,
-    AdminEntrepriseComponentsModule
-  ]
+    imports: [
+        CommonModule,
+        AdminEntrepriseRoutingModule,
+        AdminEntrepriseComponentsModule,
+        AdminEtudiantComponentsModule
+    ]
 })
 export class AdminEntrepriseModule { }

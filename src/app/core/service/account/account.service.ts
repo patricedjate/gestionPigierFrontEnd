@@ -39,6 +39,9 @@ export class AccountService {
   public addRole(userId: number, roleId: number): Observable<any> {
     return this.http.post(`${this.apiUrl}/addRoleToUser/${userId}/${roleId}`,{userId:userId,roleId:roleId},)
   }
+  public getUserByEmail(email: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/getuserbyemail/${email}`)
+  }
 }
 
 

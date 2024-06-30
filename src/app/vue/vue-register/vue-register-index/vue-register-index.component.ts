@@ -12,6 +12,7 @@ import {EtudiantService} from "../../../core/service/etudiant/etudiant.service";
 })
 export class VueRegisterIndexComponent implements OnInit{
   form!: FormGroup;
+ errorMessage: any;
   constructor(private router : Router,
               private toastr : ToastrService,
               private authService : AccountService,
@@ -28,6 +29,7 @@ export class VueRegisterIndexComponent implements OnInit{
       niveau: new FormControl('', [Validators.required]),
       date: new FormControl('', [Validators.required]),
       telephone: new FormControl('', [Validators.required]),
+      domaine: new FormControl('',[Validators.required]),
     })
   }
 
@@ -41,6 +43,7 @@ export class VueRegisterIndexComponent implements OnInit{
         universite: this.form.get('universite')?.value,
         niveau_etude: this.form.get('niveau')?.value,
         date_naissance: this.form.get('date')?.value,
+        domaine : this.form.get('domaine')?.value,
         user:({
           username : this.form.get('username')?.value,
           password : this.form.get('mdp')?.value,
@@ -56,9 +59,15 @@ export class VueRegisterIndexComponent implements OnInit{
               console.log("role ajouté avec succèss")
               this.toastr.success("Inscription effectué avec succès!");
               this.router.navigate([''])
-            }
+            } , error: (error: any) => {
+              this.errorMessage = error
+              console.log(this.errorMessage)}
+
           })
         }
+        , error: (error: any) => {
+        this.errorMessage = error
+        console.log(this.errorMessage)}
       })
 }
   }

@@ -17,6 +17,15 @@ export class EtudiantService {
   getById(id:number){
     return this.http.get(`${this.apiUrl}/etudiant/${id}`);
   }
+  update(id:number, data:Etudiants){
+    return this.http.put(`${this.apiUrl}/etudiant/update/${id}`, data);
+  }
+  getByUserId(id:number){
+    return this.http.get(`${this.apiUrl}/etudiant/getEtud/${id}`);
+  }
+  addStageToEtudiant(stageId:number, etudId:number){
+    return this.http.post(`${this.apiUrl}/etudiant/${etudId}/${stageId}`, {stageId:stageId, etudId:etudId});
+  }
 
 
 }

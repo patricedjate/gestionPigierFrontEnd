@@ -48,14 +48,26 @@
                 </div>
               </div>
               <div class="col-6">
-                <div class="form-group form-focus">
-                  <input type="text" class="form-control floating" formControlName="niveau">
-                  <label class="focus-label"> Niveau Etude</label>
-                </div>
+                <select class="select form-control"  formControlName="niveau">
+                  <option>BTS</option>
+                  <option>LICENCE</option>
+                  <option>BAC+4</option>
+                  <option>MASTER</option>
+                </select>
               </div>
             </div>
             <div class="row">
-              <div class="col-12">
+              <div class="col-6">
+                <select class="select form-control"  formControlName="domaine">
+                  <option>Informatique</option>
+                  <option>Comptabilité</option>
+                  <option>tourisme et hotelerie</option>
+                  <option>Marketing</option>
+                  <option>Communication</option>
+                  <option>Ressources Humaines</option>
+                </select>
+              </div>
+              <div class="col-6">
                 <div class="form-group form-focus">
                   <input type="text" class="form-control floating" formControlName="telephone">
                   <label class="focus-label">Telephone</label>
