@@ -14,10 +14,13 @@ private apiUrl = environment.apiUrl
   addData(data:Entreprises):Observable<any>{
   return this.http.post(`${this.apiUrl}/entreprise/add`, data)
   }
-  addStageToEntreprise(stageId:number,entrepriseId: number):Observable<any>{
-  return this.http.post(`${this.apiUrl}/entreprise/${entrepriseId}/${stageId}`, {stageId, entrepriseId})
+  addStageToEntreprise(entrepriseId: any,stageId:any ):Observable<any>{
+  return this.http.post(`${this.apiUrl}/entreprise/${stageId}/${entrepriseId}`, {entrepriseId,stageId})
   }
-  getByUserId(stageId:any):Observable<any>{
-  return this.http.get(`${this.apiUrl}/entreprise/${stageId}`)
+  getByUserId(userId:any):Observable<any>{
+  return this.http.get(`${this.apiUrl}/entreprise/getbyuserid/${userId}`)
+  }
+  getById(entrepriseId:any):Observable<any>{
+  return this.http.get(`${this.apiUrl}/entreprise/${entrepriseId}`)
   }
 }

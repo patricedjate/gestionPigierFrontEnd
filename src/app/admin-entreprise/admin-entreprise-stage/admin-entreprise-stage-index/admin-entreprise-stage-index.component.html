@@ -19,28 +19,27 @@
           <table class="table table-hover table-center mb-0">
             <thead>
             <tr>
-              <th>Dependent</th>
-              <th>Relationship</th>
-              <th>gender</th>
-              <th>Number</th>
-              <th>Blood Group</th>
+              <th>Titre</th>
+              <th>Description</th>
+              <th>Date debut</th>
+              <th>Date fin</th>
+              <th>Domaine</th>
+              <th>Lieu</th>
               <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr *ngFor="let item of items">
               <td>
                 <h2 class="table-avatar">
-<span class="avatar avatar-sm me-2">
-<img class="avatar-img rounded-circle" src="assets/img/patients/patient16.jpg" alt="User Image">
-</span>
-                  Christopher
+                  {{ item.titre }}
                 </h2>
               </td>
-              <td>Son</td>
-              <td>Male</td>
-              <td>303-297-6170</td>
-              <td>AB+</td>
+              <td>{{item.description}}</td>
+              <td>{{item.date_debut}}</td>
+              <td>{{ item.date_fin }}</td>
+              <td>{{item.domaine}}</td>
+              <td>{{item.lieu}}</td>
               <td>
                 <div class="table-action">
                   <a href="#edit_form" class="btn btn-sm bg-info-light" data-bs-toggle="modal"> <i class="fas fa-edit"></i> Edit</a>

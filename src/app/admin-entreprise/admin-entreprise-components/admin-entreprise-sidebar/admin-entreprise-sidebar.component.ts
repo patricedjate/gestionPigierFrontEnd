@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import {EtudiantService} from "../../../core/service/etudiant/etudiant.service";
 import {Etudiants} from "../../../core/model/etudiants";
+import {EntrepriseService} from "../../../core/service/entreprise/entreprise.service";
+import {Entreprises} from "../../../core/model/entreprises";
 
 @Component({
   selector: 'app-admin-entreprise-sidebar',
@@ -12,13 +13,13 @@ export class AdminEntrepriseSidebarComponent implements OnInit{
   page! : String;
   items: any=[];
   item!:any
-  etudId : any  = localStorage.getItem("etudId");
+  entrepriseId : any  = localStorage.getItem("entrepriseId");
   errorMessage!: string;
   constructor(private router: Router,
-              private service: EtudiantService) {}
+              private service: EntrepriseService) {}
   ngOnInit() {
     this.information();
-    console.log(this.etudId)
+    console.log(this.entrepriseId)
   }
   onChange(name:any){
     this.page = name;
@@ -28,8 +29,8 @@ export class AdminEntrepriseSidebarComponent implements OnInit{
     localStorage.clear();
   }
   information(){
-    this.service.getById(this.etudId).subscribe({
-        next: (data:Etudiants) => {
+    this.service.getById(this.entrepriseId).subscribe({
+        next: (data:Entreprises) => {
           this.items = data;
           console.log("sidebar");
         }

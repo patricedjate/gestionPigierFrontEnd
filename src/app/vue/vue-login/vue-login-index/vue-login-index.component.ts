@@ -7,6 +7,8 @@ import {ToastrService} from "ngx-toastr";
 import {jwtDecode} from "jwt-decode";
 import {Etudiants} from "../../../core/model/etudiants";
 import {EtudiantService} from "../../../core/service/etudiant/etudiant.service";
+import {EntrepriseService} from "../../../core/service/entreprise/entreprise.service";
+import {Entreprises} from "../../../core/model/entreprises";
 
 
 @Component({
@@ -21,12 +23,14 @@ export class VueLoginIndexComponent implements OnInit {
   email!: any;
   userId!: any;
   etudId!: any;
+  entrepriseId! : any
  errorMessage: any;
   constructor(
     private router: Router,
     private authService : AccountService,
     private  toastr : ToastrService,
     private service : EtudiantService,
+    private entrepriseService : EntrepriseService
 
   ) {}
   ngOnInit():void {
@@ -55,7 +59,27 @@ console.log(decodedJwt.token);
           if(localStorage.getItem("role") == "ADMIN"){
             this.router.navigate(['']);
           }else if(localStorage.getItem("role") == "ENTREPRISE"){
-
+            this.router.navigate(['entreprise'])
+            this.email = localStorage.getItem("email")
+            this.authService.getUserByEmail(this.email).subscribe({
+                next : (data : any) =>{
+                  console.log(data)
+                  this.userId = data.id;
+                  console.log(this.userId);
+                  localStorage.setItem("userId",this.userId);
+                  this.entrepriseService.getByUserId(this.userId).subscribe({
+                    next : ( data : Entreprises) =>{
+                      console.log(data)
+                      this.entrepriseId = data.id
+                      localStorage.setItem("entrepriseId",this.entrepriseId)
+                    },
+                    error : (error: any ) => {
+                      this.errorMessage = error;
+                    }
+                  })
+                },
+              }
+            )
           }
           else if(localStorage.getItem("role") == "ETUDIANT"){
             this.router.navigate(['etudiant']);

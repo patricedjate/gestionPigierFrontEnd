@@ -17,6 +17,8 @@ export class AdminEntrepriseStageAddComponent implements OnInit{
   form!: FormGroup;
   errorMessage: any;
   userId = localStorage.getItem('userId');
+  stageId  :any ;
+  entrepriseId  = localStorage.getItem('entrepriseId');
   constructor(
     private tostr: ToastrService,
     private router: Router,
@@ -32,34 +34,32 @@ export class AdminEntrepriseStageAddComponent implements OnInit{
       dateDebut: new FormControl("", Validators.required),
       dateFin: new FormControl("", Validators.required),
       description: new FormControl("", Validators.required),
+      lieu : new FormControl("",Validators.required)
     })
   }
   addStage(){
     if(this.form.valid){
       this.service.addStage({
-        titre : this.form.get('titre'),
-        domaine : this.form.get('domaine'),
-        date_debut: this.form.get('dateDebut'),
-        date_fin: this.form.get('dateFin'),
-        description: this.form.get('description'),
+        titre : this.form.get('titre')?.value,
+        domaine : this.form.get('domaine')?.value,
+        date_debut: this.form.get('dateDebut')?.value,
+        date_fin: this.form.get('dateFin')?.value,
+        description: this.form.get('description')?.value,
+        lieu: this.form.get('lieu')?.value
       }).subscribe({
-        next: (data:Stages) => {
-          this.entreprisesService.getByUserId(this.userId).subscribe({
-            next : (data : any)=> {
-
-          },
-            error: (error: any) => {
-              this.errorMessage = error
-            }
-          })      },
-        error: (error: any) => {
-          this.errorMessage = error
-        }
-        }
-
-
-
-      )
+        next: (data : any ) => {
+          this.stageId = data.id
+          this.entreprisesService.addStageToEntreprise(this.entrepriseId,this.stageId)
+            .subscribe({next: (data : any ) => {
+                this.tostr.success("Offre de stage crée avec succès");
+                this.router.navigate(['/entreprise/stage'])
+              },
+              error: (error: any ) => {
+              this.errorMessage = error;
+              }
+            })
+      }
+      })
     }else{
       this.tostr.info("Cette offre existe deja");
     }
